@@ -1,15 +1,15 @@
-all: build
+all: build## 	all
 
 .PHONY: app build clean release
 
-build:
+build:## 	cargo build
 	@cargo build
 
-clean:
+clean:## 	cargo clean
 	@cargo clean
 
-release:
+release:## 	cargo build --release
 	@cargo build --release
 
-app:
+app:## 	cd app && xcodebuild
 	@cd app && xcodebuild
