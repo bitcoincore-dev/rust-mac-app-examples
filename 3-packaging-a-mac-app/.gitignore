@@ -1,0 +1,6 @@
+*.DS_Store
+app/RustPack.xcodeproj/project.xcworkspace/xcshareddata
+app/RustPack.xcodeproj/project.xcworkspace/xcuserdata
+app/RustPack.xcodeproj/xcuserdata
+app/build
+target
