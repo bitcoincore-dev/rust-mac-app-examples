@@ -16,16 +16,6 @@
 		8ADFC7361DD67B950080DCCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADFC7351DD67B950080DCCC /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		8ADFC73D1DD67E240080DCCC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8ADFC71D1DD67B670080DCCC /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8ADFC7371DD67D040080DCCC;
-			remoteInfo = "rust-binary";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		8AC30EAB1DDBD53E00DE5EFD /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -88,7 +78,7 @@
 		8ADFC71C1DD67B670080DCCC = {
 			isa = PBXGroup;
 			children = (
-				8ADFC7271DD67B670080DCCC /* Computer */,
+				8ADFC7271DD67B670080DCCC /* app */,
 				8ADFC7261DD67B670080DCCC /* Products */,
 				8AC30EA71DDBD42500DE5EFD /* Libraries */,
 				8AC30EB61DDBDF3A00DE5EFD /* Frameworks */,
@@ -103,7 +93,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8ADFC7271DD67B670080DCCC /* Computer */ = {
+		8ADFC7271DD67B670080DCCC /* app */ = {
 			isa = PBXGroup;
 			children = (
 				8ADFC72A1DD67B670080DCCC /* Assets.xcassets */,
@@ -113,8 +103,7 @@
 				8AC30EB51DDBDB7800DE5EFD /* cruncher.h */,
 				8AC30EBE1DDBE09700DE5EFD /* Application.xib */,
 			);
-			name = Computer;
-			path = RustPack;
+			name = app;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,7 +111,7 @@
 /* Begin PBXLegacyTarget section */
 		8ADFC7371DD67D040080DCCC /* libcruncher */ = {
 			isa = PBXLegacyTarget;
-			buildArgumentsString = release;
+			buildArgumentsString = app;
 			buildConfigurationList = 8ADFC73A1DD67D040080DCCC /* Build configuration list for PBXLegacyTarget "libcruncher" */;
 			buildPhases = (
 			);
@@ -141,6 +130,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8ADFC7321DD67B670080DCCC /* Build configuration list for PBXNativeTarget "Computer" */;
 			buildPhases = (
+				4B6C70062B1B87A50060DABA /* cargo b --release */,
 				8ADFC7211DD67B670080DCCC /* Sources */,
 				8AC30EAB1DDBD53E00DE5EFD /* CopyFiles */,
 				8ADFC7221DD67B670080DCCC /* Frameworks */,
@@ -149,7 +139,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				8ADFC73E1DD67E240080DCCC /* PBXTargetDependency */,
 			);
 			name = Computer;
 			productName = RustPack;
@@ -168,7 +157,7 @@
 				TargetAttributes = {
 					8ADFC7241DD67B670080DCCC = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 7733U57KMV;
+						DevelopmentTeam = M684FYCYG6;
 						ProvisioningStyle = Automatic;
 					};
 					8ADFC7371DD67D040080DCCC = {
@@ -183,6 +172,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -209,6 +199,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4B6C70062B1B87A50060DABA /* cargo b --release */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "cargo b --release";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "##source your cargo env\n. ~/.cargo/env && CARGO=$(which cargo) && $CARGO b --release\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8ADFC7211DD67B670080DCCC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -219,14 +230,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		8ADFC73E1DD67E240080DCCC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8ADFC7371DD67D040080DCCC /* libcruncher */;
-			targetProxy = 8ADFC73D1DD67E240080DCCC /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		8ADFC7301DD67B670080DCCC /* Debug */ = {
@@ -323,15 +326,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 7733U57KMV;
+				DEVELOPMENT_TEAM = M684FYCYG6;
 				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../target/release";
-				PRODUCT_BUNDLE_IDENTIFIER = me.delisa.RustPack;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.bitcoincore.RustPack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = BridgingHeader.h;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -339,15 +343,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 7733U57KMV;
+				DEVELOPMENT_TEAM = M684FYCYG6;
 				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../target/release";
-				PRODUCT_BUNDLE_IDENTIFIER = me.delisa.RustPack;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.bitcoincore.RustPack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = BridgingHeader.h;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
