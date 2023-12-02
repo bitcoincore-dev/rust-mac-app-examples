@@ -1,13 +1,15 @@
-all: build
+all: build## 	all
 
-build:
+.PHONY: app build clean release
+
+build:## 	cargo build
 	@cargo build
 
-clean:
+clean:## 	cargo clean
 	@cargo clean
 
-test:
-	@cargo test
+release:## 	cargo build --release
+	@cargo build --target=aarch64-apple-darwin --target=x86_64-apple-darwin --release || cargo build --release
 
-release:
-	@cargo build --release
+app:## 	cd app && xcodebuild
+	@cd app && xcodebuild -arch x86_64 -arch Arm64
