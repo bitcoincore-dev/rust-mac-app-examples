@@ -1,5 +1,5 @@
 [package]
-name = "4-wrapping-cocoa-apis"
+name = "wrapping-cocoa-apis"
 version = "0.1.0"
 authors = ["Delisa Mason <iskanamagus@gmail.com>"]
 
