@@ -13,6 +13,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B6C70A12B1B96D90060DABA /* libc.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libc.tbd; path = usr/lib/libc.tbd; sourceTree = SDKROOT; };
+		4B6C70A22B1B96EC0060DABA /* libm.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libm.tbd; path = usr/lib/libm.tbd; sourceTree = SDKROOT; };
+		4B6C70A32B1B96FE0060DABA /* libSystem.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libSystem.tbd; path = usr/lib/libSystem.tbd; sourceTree = SDKROOT; };
 		8ADFC7251DD67B670080DCCC /* RustPack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RustPack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ADFC72A1DD67B670080DCCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		8ADFC72F1DD67B670080DCCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
@@ -31,11 +34,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B6C70A02B1B96D80060DABA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4B6C70A32B1B96FE0060DABA /* libSystem.tbd */,
+				4B6C70A22B1B96EC0060DABA /* libm.tbd */,
+				4B6C70A12B1B96D90060DABA /* libc.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8ADFC71C1DD67B670080DCCC = {
 			isa = PBXGroup;
 			children = (
 				8ADFC7271DD67B670080DCCC /* app */,
 				8ADFC7261DD67B670080DCCC /* Products */,
+				4B6C70A02B1B96D80060DABA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
